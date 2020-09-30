@@ -456,58 +456,95 @@
 	<category>
         <pattern>Twoclass</pattern>
         <template>
-            Twoclass, Answers simple two-choice questions, like yes or no, true or false
+            Two-Class Classification can answer simple two-choice questions, like yes or no, true or false<br/>
+            Here are the models I recommend you to choose:<br/>
+            1.Two-Class Support Vector Machine: Under 100 features, linear model.<br/>
+            2.Two-Class Averaged Perceptron: Fast training, linear model<br/>
+            3.Two-Class Decision Forest: Accurate, fast training<br/>
+            4.Two-Class Logistic Regression: Fast training, linear model<br/>
+            5.Two-Class Boosted Decision Tree: Accurate, fast training, large memory footprint<br/>
+            6.Two-Class Neural Network: Accurate, long training times
         </template>      
     </category>
     <!-- Multiclass -->
 	<category>
         <pattern>Multiclass</pattern>
         <template>
-            Multiclass, Answers complex questions with multiple possible answers
+            Multiclass Classification can answers complex questions with multiple possible answers<br/>
+            Here are the models I recommend you to choose:<br/>
+            1.Multiclass Logistic Regression: Fast training times, linear model.<br/>
+            2.Multiclass Neural Network: Accuracy, long training times<br/>
+            3.Multiclass Decision Forest: Accuracy, fast training times<br/>
+            4.One-vs-All Multiclass: Depends on the two-class classifier<br/>
+            5.Multiclass Boosted Decision Tree: Non-parametric, fast training times and scalable
         </template>      
     </category>
-    <!-- Regression -->
+<!-- Regression -->
 	<category>
         <pattern>Regression</pattern>
         <template>
-            Regression, Makes forecasts by estimating the relationship between values
+            Regression can make forecasts by estimating the relationship between values.<br/>
+            Here are the models I recommend you to choose:<br/>
+            1.Fast Forest Quantile Regression: Predicts a distribution.<br/>
+            2.Poisson Regression: Predicts event counts<br/>
+            3.Linear Regression: Fast training, linear model<br/>
+            4.Bayesian Linear Regression: Linear model, small data sets<br/>
+            5.Decision Forest Regression: Accurate, fast training times<br/>
+            6.Neural Network Regression: Accurate, long training times<br/>
+            7.Boosted Decision Tree Regression: Accurate, fast training times, large memory footprint
         </template>      
     </category>    
-    <!-- Clustering -->
+<!-- Clustering -->
 	<category>
         <pattern>Clustering</pattern>
         <template>
-            Clustering, Separates similar data points into intuitive groups
+            Clustering can separate similar data points into intuitive groups.<br/>
+            Here are the models I recommend you to choose:<br/>
+            1.K-Means: Unsupervised learning
         </template>      
     </category>
-    <!-- ImageClassification -->
+<!-- ImageClassification -->
 	<category>
         <pattern>ImageClassification</pattern>
         <template>
-            ImageClassification, Classifies images with popular networks
+            Image Classification can classifies images with popular networks<br/>
+            Here are the models I recommend you to choose:<br/>
+            1.DenseNet: High accuracy, better efficiency.
         </template>      
     </category>
-    <!-- TextAnalytics -->
+<!-- TextAnalytics -->
 	<category>
         <pattern>TextAnalytics</pattern>
         <template>
-            TextAnalytics, Derives high-quality information from text
+            Text Analytics can derive high-quality information from text<br/>
+            Here are the models I recommend you to choose:<br/>
+            1.Extract N-Gram Features from Text: Creates a dictionary of n-grams from a column of free text.<br/>
+            2.Feature Hashing: Converts text data to integer encoded features using the Vowpal Wabbit library<br/>
+            3.Preprocess Text: Performs cleaning operations on text, like removal of stop-words, case normalization<br/>
+            4.Word2Vector: Converts words to values for use in NLP tasks, like recommender, named entity recognition, machine translation<br/>
         </template>      
     </category>
-    <!-- Recommenders -->
+<!-- Recommenders -->
 	<category>
         <pattern>Recommenders</pattern>
         <template>
-            Recommenders, Predicts what someone will be interested in
+            Recommenders can predict what someone will be interested in.<br/>
+            Here are the models I recommend you to choose:<br/>
+            1.SVD Recommender: Collaborative filtering, better performance with lower cost by reducing dimensionality.
         </template>      
     </category>
-    <!-- AnomalyDetection -->
+<!-- AnomalyDetection -->
 	<category>
         <pattern>AnomalyDetection</pattern>
         <template>
-            AnomalyDetection, Identifies and predicts rare or unusual data points
+            Anomaly Detection can identifie and predicts rare or unusual data points<br/>
+            Here are the models I recommend you to choose:<br/>
+            1.One Class SVM: Under 100 features aggressive boundary.<br/>
+            2.PCA-Based Anomaly Detection: Fast training times.
         </template>      
     </category>
+    
+    
 <!-- Test -->	
 	<category>
         <pattern>TEST</pattern>
