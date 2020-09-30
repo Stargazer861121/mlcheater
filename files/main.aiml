@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	
+<!-- Q1 -->
+	<category>
+	    <pattern>*</pattern>
+	    <template>I can help you choose the machine learning algorithm you need.<br/>
+	    You can enter answers other than options to come back here<br/>
+	    Which mode do you want?<br/>
+		A.Help me find it.<br/>
+		B.Just list all.<br/>
+		Enter alphabet (A or B)-
+        </template>
+    </category>
+
+    <category>
+        <pattern>A</pattern>
+        <that>ENTER ALPHABET *</that>
+        <template>
+        <think>
+            <set name="Q1">Find</set>
+        </think>
+        <srai><get name="Q1"/></srai>  
+        </template>
+    </category>
+	
+    <category>
+        <pattern>B</pattern>
+        <that>ENTER ALPHABET *</that>
+        <template>
+        <think>
+            <set name="Q1">List</set>
+        </think>
+        <srai><get name="Q1"/></srai>  
+        </template>
+    </category>	
+	
+<!-- Q2 -->
+	<category>
+        <pattern>FIND</pattern>
+        <template>
+            Do you want to predict data (Y or N)-
+        </template>      
+    </category>  
+    
+    <category>
+        <pattern>Y</pattern>
+        <that>Do you want to predict data *</that>
+        <template>
+        <think>
+            <set name="Q2">PREDICT</set>
+        </think>
+        <srai><get name="Q2"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>N</pattern>
+        <that>Do you want to predict data *</that>
+        <template>
+        <think>
+            <set name="Q2">NOTPREDICT</set>
+        </think>
+        <srai><get name="Q2"/></srai>  
+        </template>
+    </category>	    
+<!-- Q3 -->	
+	<category>
+        <pattern>PREDICT</pattern>
+        <template>
+            Is your data DISCRETE or CONTINOUS (D or C)
+        </template>
+    </category>
+	
+	<category>
+        <pattern>D</pattern>
+        <that>Is your data DISCRETE or CONTINOUS *</that>
+        <template>
+        <think>
+            <set name="Q3">Discrete</set>
+        </think>
+        <srai><get name="Q3"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>C</pattern>
+        <that>Is your data DISCRETE or CONTINOUS *</that>
+        <template>
+        <think>
+            <set name="Q3">Regression</set>
+        </think>
+        <srai><get name="Q3"/></srai>  
+        </template>
+    </category>
+	
+<!-- Q4 -->	
+	<category>
+        <pattern>DISCRETE</pattern>
+        <template>
+            Do you want the data to be classified into TWO categories or MORE (T or M)
+        </template>
+    </category>
+	
+	<category>
+        <pattern>T</pattern>
+        <that>Do you want the data to be classified into TWO categories or MORE *</that>
+        <template>
+        <think>
+            <set name="Q4">Two_class</set>
+        </think>
+        <srai><get name="Q4"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>M</pattern>
+        <that>Do you want the data to be classified into TWO categories or MORE *</that>
+        <template>
+        <think>
+            <set name="Q4">Multiclass</set>
+        </think>
+        <srai><get name="Q4"/></srai>  
+        </template>
+    </category>
+
+<!-- Q5 -->	
+	<category>
+        <pattern>NOTPREDICT</pattern>
+        <template>
+            Do you want to sort the data (Y or N)-
+        </template>
+    </category>
+	
+	<category>
+        <pattern>Y</pattern>
+        <that>Do you want to sort the data *</that>
+        <template>
+        <think>
+            <set name="Q5">SORT</set>
+        </think>
+        <srai><get name="Q5"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>N</pattern>
+        <that>Do you want to sort the data *</that>
+        <template>
+        <think>
+            <set name="Q5">NOTSORT</set>
+        </think>
+        <srai><get name="Q5"/></srai>  
+        </template>
+    </category>    
+
+<!-- Q6 -->	
+	<category>
+        <pattern>SORT</pattern>
+        <template>
+            Do you want to Discover the structure or CLASSIFY images (D or C)-
+        </template>
+    </category>
+	
+	<category>
+        <pattern>D</pattern>
+        <that>Do you want to Discover the structure or CLASSIFY images *</that>
+        <template>
+        <think>
+            <set name="Q6">Clustering</set>
+        </think>
+        <srai><get name="Q6"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>C</pattern>
+        <that>Do you want to Discover the structure or CLASSIFY images *</that>
+        <template>
+        <think>
+            <set name="Q6">ImageClassification</set>
+        </think>
+        <srai><get name="Q6"/></srai>  
+        </template>
+    </category>
+    
+<!-- Q7 -->	
+	<category>
+        <pattern>NOTSORT</pattern>
+        <template>
+        Which kind of question is like the one you want to ask ?<br/>
+		A.What info is in this text?<br/>
+		B.What will they be interested in?<br/>
+		C.Is this weird?<br/>
+		Pick a question (A, B or C)-
+        </template>
+    </category>
+	
+	<category>
+        <pattern>A</pattern>
+        <that>Pick a question *</that>
+        <template>
+        <think>
+            <set name="Q7">TextAnalytics</set>
+        </think>
+        <srai><get name="Q7"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>B</pattern>
+        <that>Pick a question *</that>
+        <template>
+        <think>
+            <set name="Q7">Recommenders</set>
+        </think>
+        <srai><get name="Q7"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>C</pattern>
+        <that>Pick a question *</that>
+        <template>
+        <think>
+            <set name="Q7">AnomalyDetection</set>
+        </think>
+        <srai><get name="Q7"/></srai>  
+        </template>
+    </category>
+    
+<!-- List -->
+	<category>
+        <pattern>LIST</pattern>
+        <template>
+            How should I show you the list? <br/>
+            ALGORITHM  or QUESTIONS (A or Q)-
+        </template>      
+    </category>  
+    
+    <!-- algorithm List -->
+    <category>
+        <pattern>A</pattern>
+        <that>ALGORITHM  or QUESTIONS *</that>
+        <template>
+        Which kind of algorithm is you need?<br/>
+		A.Text Analytics<br/>
+		B.Regression<br/>
+		C.Recommenders<br/>
+		D.Clustering<br/>
+		E.Anomaly Detection?<br/>
+		F.Multiclass<br/>
+		G.Twoclass<br/>
+		H.ImageClassification<br/>
+		Choose an algorithm-
+        </template>
+    </category>
+    
+    <category>
+        <pattern>A</pattern>
+        <that>* Choose an algorithm *</that>
+        <template>
+        <think>
+            <set name="Q8">TextAnalytics</set>
+        </think>
+        <srai><get name="Q8"/></srai>  
+        </template>
+    </category>
+
+    <category>
+        <pattern>B</pattern>
+        <that>* Choose an algorithm *</that>
+        <template>
+        <think>
+            <set name="Q8">Regression</set>
+        </think>
+        <srai><get name="Q8"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>C</pattern>
+        <that>* Choose an algorithm *</that>
+        <template>
+        <think>
+            <set name="Q8">Recommenders</set>
+        </think>
+        <srai><get name="Q8"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>D</pattern>
+        <that>* Choose an algorithm *</that>
+        <template>
+        <think>
+            <set name="Q8">Clustering</set>
+        </think>
+        <srai><get name="Q8"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>E</pattern>
+        <that>* Choose an algorithm *</that>
+        <template>
+        <think>
+            <set name="Q8">AnomalyDetection</set>
+        </think>
+        <srai><get name="Q8"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>F</pattern>
+        <that>* Choose an algorithm *</that>
+        <template>
+        <think>
+            <set name="Q8">Multiclass</set>
+        </think>
+        <srai><get name="Q8"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>G</pattern>
+        <that>* Choose an algorithm *</that>
+        <template>
+        <think>
+            <set name="Q8">Twoclass</set>
+        </think>
+        <srai><get name="Q8"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>H</pattern>
+        <that>* Choose an algorithm *</that>
+        <template>
+        <think>
+            <set name="Q8">ImageClassification</set>
+        </think>
+        <srai><get name="Q8"/></srai>  
+        </template>
+    </category>
+    
+    <!-- question List -->
+    <category>
+        <pattern>Q</pattern>
+        <that>ALGORITHM  or QUESTIONS *</that>
+        <template>
+        Which question like you want to ask?<br/>
+		A.What info is in this text?<br/>
+		B.How much or how many?<br/>
+		C.What will they be interested in?<br/>
+		D.How is this organized?<br/>
+		E.Is this weird?<br/>
+		F.Is this A or B or C or D?<br/>
+		G.Is this A or B?<br/>
+		H.What does this image represent?<br/>
+		Enter your alphabet of question-
+        </template>
+    </category>
+    
+    <category>
+        <pattern>A</pattern>
+        <that>Enter your alphabet of question *</that>
+        <template>
+        <think>
+            <set name="Q9">TextAnalytics</set>
+        </think>
+        <srai><get name="Q9"/></srai>  
+        </template>
+    </category>
+
+    <category>
+        <pattern>B</pattern>
+        <that>Enter your alphabet of question *</that>
+        <template>
+        <think>
+            <set name="Q9">Regression</set>
+        </think>
+        <srai><get name="Q9"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>C</pattern>
+        <that>Enter your alphabet of question *</that>
+        <template>
+        <think>
+            <set name="Q9">Recommenders</set>
+        </think>
+        <srai><get name="Q9"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>D</pattern>
+        <that>Enter your alphabet of question *</that>
+        <template>
+        <think>
+            <set name="Q9">Clustering</set>
+        </think>
+        <srai><get name="Q9"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>E</pattern>
+        <that>Enter your alphabet of question *</that>
+        <template>
+        <think>
+            <set name="Q9">AnomalyDetection</set>
+        </think>
+        <srai><get name="Q9"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>F</pattern>
+        <that>Enter your alphabet of question *</that>
+        <template>
+        <think>
+            <set name="Q9">Multiclass</set>
+        </think>
+        <srai><get name="Q9"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>G</pattern>
+        <that>Enter your alphabet of question *</that>
+        <template>
+        <think>
+            <set name="Q9">Twoclass</set>
+        </think>
+        <srai><get name="Q9"/></srai>  
+        </template>
+    </category>
+    
+    <category>
+        <pattern>H</pattern>
+        <that>Enter your alphabet of question *</that>
+        <template>
+        <think>
+            <set name="Q9">ImageClassification</set>
+        </think>
+        <srai><get name="Q9"/></srai>  
+        </template>
+    </category>
+    
+<!-- Algorithm -->
+    <!-- Twoclass -->
+	<category>
+        <pattern>Twoclass</pattern>
+        <template>
+            Twoclass, Answers simple two-choice questions, like yes or no, true or false
+        </template>      
+    </category>
+    <!-- Multiclass -->
+	<category>
+        <pattern>Multiclass</pattern>
+        <template>
+            Multiclass, Answers complex questions with multiple possible answers
+        </template>      
+    </category>
+    <!-- Regression -->
+	<category>
+        <pattern>Regression</pattern>
+        <template>
+            Regression, Makes forecasts by estimating the relationship between values
+        </template>      
+    </category>    
+    <!-- Clustering -->
+	<category>
+        <pattern>Clustering</pattern>
+        <template>
+            Clustering, Separates similar data points into intuitive groups
+        </template>      
+    </category>
+    <!-- ImageClassification -->
+	<category>
+        <pattern>ImageClassification</pattern>
+        <template>
+            ImageClassification, Classifies images with popular networks
+        </template>      
+    </category>
+    <!-- TextAnalytics -->
+	<category>
+        <pattern>TextAnalytics</pattern>
+        <template>
+            TextAnalytics, Derives high-quality information from text
+        </template>      
+    </category>
+    <!-- Recommenders -->
+	<category>
+        <pattern>Recommenders</pattern>
+        <template>
+            Recommenders, Predicts what someone will be interested in
+        </template>      
+    </category>
+    <!-- AnomalyDetection -->
+	<category>
+        <pattern>AnomalyDetection</pattern>
+        <template>
+            AnomalyDetection, Identifies and predicts rare or unusual data points
+        </template>      
+    </category>
+<!-- Test -->	
+	<category>
+        <pattern>TEST</pattern>
+        <template>
+            it is work!
+        </template>      
+    </category>
+	
+</aiml>
